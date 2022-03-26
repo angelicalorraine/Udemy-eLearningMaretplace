@@ -7,9 +7,9 @@ import { Context } from "../context";
 import { useRouter } from "next/router";
 
 const Register = () => {
-  const [name, setName] = useState("Gel");
-  const [email, setEmail] = useState("gel@gmail.com");
-  const [password, setPassword] = useState("mowgs5");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const {

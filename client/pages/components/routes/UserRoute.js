@@ -3,6 +3,8 @@ import { Context } from "../../../context";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { SyncOutlined } from "@ant-design/icons";
+import UserNav from "../nav/UserNav";
+import { Container, Col, Row } from "react-bootstrap";
 
 const UserRoute = ({ children }) => {
   const [ok, setOk] = useState(false);
@@ -36,7 +38,14 @@ const UserRoute = ({ children }) => {
           className="d-flex justify-content-center display-1 text-primart p-5"
         />
       ) : (
-        <> {children} </>
+        <Container fluid>
+          <Row>
+            <Col md={2}>
+              <UserNav />
+            </Col>
+            <Col md={10}> {children} </Col>
+          </Row>
+        </Container>
       )}
     </>
   );

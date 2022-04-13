@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap";
 const UserNav = () => {
   return (
     <Nav
+      fill
       variant="pills"
       activeKey="/user"
       onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}

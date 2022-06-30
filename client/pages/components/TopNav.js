@@ -72,6 +72,9 @@ const TopNav = () => {
           </Item>
         )}
 
+
+
+
         {user === null && (
           <>
             <Item
@@ -97,11 +100,25 @@ const TopNav = () => {
           </>
         )}
 
+        {user && user.role && user.role.includes("Instructor") && (
+          <Item
+            key="/instructor"
+            onClick={(e) => setCurrent(e.key)}
+            icon={<TeamOutlined />}
+            style={{ marginLeft: "auto" }}
+            className='float-right'
+          >
+            <Link href="/instructor">
+              <a>Instructor</a>
+            </Link>
+          </Item>
+        )}
         {user !== null && (
           <SubMenu
             icon={<CoffeeOutlined />}
             title={user && user.name}
-            style={{ marginLeft: "auto" }}
+            // style={{ marginLeft: "auto" }}
+            className="float-right"
           >
             <ItemGroup>
               <Item key="/user">
@@ -115,6 +132,8 @@ const TopNav = () => {
             </ItemGroup>
           </SubMenu>
         )}
+
+
       </Menu>
     </>
   );
